@@ -1,6 +1,4 @@
 <?php
-
-
 class DB
 {
     private static $_instance = null;
@@ -9,8 +7,9 @@ class DB
     private
         $_pdo,
         $_error = false,
-        $_query;
-
+        $_query,
+        $_results,
+        $_count = 0;
 
     private function __construct()
     {
@@ -45,7 +44,20 @@ class DB
     public function query($sql, $parameter = array()){
         $this->_error=false;
         if($this->_query = $this->_pdo->prepare($sql)) {
-
+            $x=1;
+            if(count($parameter)){
+                foreach($parameter as $param){
+                    $this->_query->bindValue($x, $param);
+                    $x++;
+                }
+            }
+            if ($this->_query->execute()){
+                $this->_results = $this -$this->_query->fetchAll(PDO::FETCH_OBJ);
+                $this->_count = $this->_query->rowCount();
+            }
+            else{
+                $this->_error = true;
+            }
         }
     }
 
