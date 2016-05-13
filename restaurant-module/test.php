@@ -9,6 +9,6 @@
 
 include ("config/db.php");
 
-DB::getInstance();
+DB::getInstance()->query("SELECT * FROM reserveringen");
 ?>
 

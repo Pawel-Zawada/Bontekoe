@@ -7,7 +7,9 @@ class DB
 
 
     private
-        $_PDO;
+        $_pdo,
+        $_error = false,
+        $_query;
 
 
     private function __construct()
@@ -20,7 +22,7 @@ class DB
 
         try {
 
-            $this->_PDO = new PDO("mysql:host=$_host;dbname=$_dbname", $_user, $_pass);
+            $this->_pdo = new PDO("mysql:host=$_host;dbname=$_dbname", $_user, $_pass);
             if($debug){
                 echo "ok";
             }
@@ -39,4 +41,13 @@ class DB
         }
         return self::$_instance;
     }
+
+    public function query($sql, $parameter = array()){
+        $this->_error=false;
+        if($this->_query = $this->_pdo->prepare($sql)) {
+
+        }
+    }
+
+
 }
