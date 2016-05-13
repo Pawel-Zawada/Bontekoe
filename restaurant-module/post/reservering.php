@@ -14,13 +14,15 @@
 
             if(!strlen($name) <= 4 || !strlen($name) > 64 || !strlen($email) <= 6 || !strlen($email) > 64){
 
-                $sql = $conn->prepare("INSERT INTO `reserveringen` (`naam`, `email`, `aantal_personen`, `datum`, `tijd`, `opmerking`) VALUES (?, ?, ?, ?, ?, ?);");
-                $sql->bindParam(1, $name);
-                $sql->bindParam(2, $email);
-                $sql->bindParam(3, $num_of_people);
-                $sql->bindParam(4, $date);
-                $sql->bindParam(5, $time);
-                $sql->bindParam(6, $comment);
+                $sql = DB::getInstance()->query("INSERT INTO `reserveringen` (`naam`, `email`, `aantal_personen`, `datum`, `tijd`, `opmerking`) VALUES (?, ?, ?, ?, ?, ?);", array(
+                    $name,
+                    $email,
+                    $num_of_people,
+                    $date,
+                    $time,
+                    $comment
+                ));
+
                 $sql->execute();
 
                 $_SESSION['home'] = '<div class="notification white z-depth-1">
