@@ -1,16 +1,20 @@
 <?php
-
-
 class DB
 {
     private static $_instance = null;
     private
         $_pdo,
         $_error = false,
+<<<<<<< HEAD
         $_count,
         $_results,
         $_query;
 
+=======
+        $_query,
+        $_results,
+        $_count = 0;
+>>>>>>> 09fac45494dccab10616e012b6bf479eb5616e93
 
     private function __construct()
     {
@@ -41,6 +45,7 @@ class DB
         }
         return self::$_instance;
     }
+
 
     public function query($sql, $params = array()){
         $this->_error = false;
