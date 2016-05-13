@@ -23,7 +23,7 @@
                     $comment
                 ));
 
-                $sql->execute();
+
 
                 $_SESSION['home'] = '<div class="notification white z-depth-1">
                                         <p><i class="material-icons left info">info_outline</i> U heeft geregistreerd <i class="material-icons right close">close</i></p>
@@ -31,15 +31,15 @@
                 header('Location: ../index.php');
             }else{
                 $_SESSION['home'] = '<div class="notification warning white z-depth-1">
-            <p class="warning"><i class="material-icons left warning">error</i> Er is iets missgegaan probeer opnieuw <i class="material-icons right close">close</i></p>
-        </div>';
+                                        <p class="warning"><i class="material-icons left warning">error</i> Er is iets missgegaan probeer opnieuw <i class="material-icons right close">close</i></p>
+                                     </div>';
                 header('Location: ../index.php');
             }
 
         }else{
             $_SESSION['home'] = '<div class="notification warning white z-depth-1">
-            <p class="warning"><i class="material-icons left warning">error</i> Er is iets missgegaan probeer opnieuw <i class="material-icons right close">close</i></p>
-        </div>';
+                                    <p class="warning"><i class="material-icons left warning">error</i> Er is iets missgegaan probeer opnieuw <i class="material-icons right close">close</i></p>
+                                 </div>';
             header('Location: ../index.php');
         }
 

@@ -4,11 +4,11 @@
 class DB
 {
     private static $_instance = null;
-
-
     private
         $_pdo,
         $_error = false,
+        $_count,
+        $_results,
         $_query;
 
 
