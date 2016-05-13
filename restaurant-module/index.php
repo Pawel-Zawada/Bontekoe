@@ -1,18 +1,82 @@
-<?php   include "includes/header.php"; ?>
+<?php   include "includes/header.php";
 
-    <div class="notification-wrapper">
+        if(Input::exists())
+        {
+            $validate = new Validate();
+            $validation = $validate->check($_POST, array(
+
+                'naam' => array(
+                    'required' => true,
+                    'min' => 6,
+                    'max' => 64
+                ),
+                'email' => array(
+                    'required' => true,
+                    'min' => 6,
+                    'max' => 64
+                ),
+                'aantalpersonen' => array(
+                    'required' => true,
+                ),
+                'date' => array(
+                    'required' => true
+                ),
+                'time' => array(
+                    'required' => true
+                )
+            ));
+            if($validate->passed()){
+
+                try{
+
+                    DB::getInstance()->query('INSERT INTO `reserveringen` (`naam`, `email`, `aantal_personen`, `datum`, `tijd`, `opmerking`) VALUES (?, ?, ?, ?, ?, ?);', array(
+                        Input::get('naam'),
+                        Input::get('email'),
+                        Input::get('aantalpersonen'),
+                        Input::get('date'),
+                        Input::get('time'),
+                        Input::get('opmerking')
+                    ));
+
+                    Session::flash('home', '<div class="notification white z-depth-1">
+                                                <p><i class="material-icons left info">info_outline</i> U heeft geregistreerd <i class="material-icons right close">close</i></p>
+                                            </div>');
+                    Redirect::to('index.php');
+
+
+
+                }catch(Exception $e){
+                    Session::flash('home', '<div class="notification warning white z-depth-1">
+                                    <p class="warning"><i class="material-icons left warning">error</i> U heeft niks ingevuld <i class="material-icons right close">close</i></p>
+                                 </div>');
+                    header('Location: index.php');
+                }
+
+            }else{
+                ?><div class="notification-wrapper"><?php
+                foreach($validate->errors() as $error){
+                    echo '<div class="notification warning white z-depth-1">
+                            <p class="warning"><i class="material-icons left warning">error</i>' . $error . '<i class="material-icons right close">close</i></p>
+                          </div>';
+                }
+            }
+        }
+
+
+
+?>
+
         <?php
 
-        if(isset($_SESSION['home'])){
-            echo "<p>" . $_SESSION['home'] . "</p>";
-            unset($_SESSION['home']);
+        if(Session::exists('home')){
+            echo Session::flash('home');
         }
 
         ?>
     </div>
 
     <div class="container">
-        <form action="post/reservering.php" method="post">
+        <form action="" method="post">
             <div class="row">
                 <div class="col s6">
                     <div class="row">

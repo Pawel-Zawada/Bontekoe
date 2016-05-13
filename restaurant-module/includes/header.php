@@ -1,4 +1,4 @@
-<?php require_once 'config/db.php';?>
+<?php require_once 'core/init.php';?>
 <!doctype html>
 <html lang="en">
 

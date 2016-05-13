@@ -5,7 +5,6 @@ $('.datepicker').pickadate({
     selectYears: 15 // Creates a dropdown of 15 years to control year
 });
 
-$('#textarea1').val('Opmerking');
 $('#textarea1').trigger('autoresize');
 
 
