@@ -7,3 +7,14 @@ $('.datepicker').pickadate({
 
 $('#textarea1').val('Opmerking');
 $('#textarea1').trigger('autoresize');
+
+
+$('i.close').on('click', function(){
+
+    $(this).parents(':eq(1)').animate({
+        left: "-300px"
+    }, 150, "easeOutBounce").fadeOut(150, function(){
+        $(this).remove();
+    });
+
+});

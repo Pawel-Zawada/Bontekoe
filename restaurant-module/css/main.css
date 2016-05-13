@@ -1,0 +1,50 @@
+.notification-wrapper{
+    position: fixed;
+    top: 96px;
+    left: 16px;
+}
+.notification{
+    height: 64px;
+    width: 256px;
+    border-radius: 2px;
+    position: relative;
+}
+.notification.warning{
+    height: 64px;
+    width: 275px;
+    border-radius: 2px;
+    position: relative;
+}
+.notification p{
+    height: 64px;
+    width: 256px;
+    padding: 0 10px;
+    line-height: 64px;
+    box-sizing: border-box;
+}
+.notification p.warning{
+    height: 64px;
+    width: 275px;
+    padding: 0 8px;
+    line-height: 64px;
+    box-sizing: border-box;
+    font-size: 12px;
+}
+.notification i.info{
+    line-height: 64px;
+    font-size: 36px;
+    color: #4caf50;
+}
+
+.notification i.warning{
+    line-height: 64px;
+    font-size: 32px;
+    color: #f44336;
+    margin-right: 3px;
+}
+.notification i.close{
+    line-height: 64px;
+    font-size: 14px;
+    color: #f44336;
+    margin-left: 3px;
+}

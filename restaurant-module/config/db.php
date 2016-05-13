@@ -1,10 +1,12 @@
 <?php
 
+    session_start();
+
     $user = 'root';
     $pass = '';
     $dbname = 'Bontekoe_ALA';
     $host = '127.0.0.1';
-    $debug = true;
+    $debug = false;
 
     try{
 

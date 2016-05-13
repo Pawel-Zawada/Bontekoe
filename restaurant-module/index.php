@@ -1,4 +1,15 @@
-<?php include "includes/header.php"; ?>
+<?php   include "includes/header.php"; ?>
+
+    <div class="notification-wrapper">
+        <?php
+
+        if(isset($_SESSION['home'])){
+            echo "<p>" . $_SESSION['home'] . "</p>";
+            unset($_SESSION['home']);
+        }
+
+        ?>
+    </div>
 
     <div class="container">
         <form action="post/reservering.php" method="post">
@@ -63,7 +74,7 @@
                 </div>
             </div>
 
-            <button type="submit" class="waves-light waves-effect btn red"></button>
+            <button type="submit" class="waves-light waves-effect btn red" name="reservering" value="btn">Reserveer</button>
 
         </form>
     </div>
