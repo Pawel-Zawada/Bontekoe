@@ -9,10 +9,8 @@ Class Reservering{
         $this->_db = DB::getInstance();
     }
 
-    public function create($fields = array()){
-        if($this->_db->insert('reserveringen', $fields)){
-            throw new Exception('There was a problem');
-        }
+    public function create($values = array()){
+        $this->_db->query('INSERT INTO `reserveringen` (`naam`, `email`, `aantal_personen`, `datum`, `tijd`, `opmerking`) VALUES (?, ?, ?, ?, ?, ?);', $values);
     }
 
 }

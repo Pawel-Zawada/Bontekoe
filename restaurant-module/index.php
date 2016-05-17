@@ -1,4 +1,5 @@
 <?php   include "includes/header.php";
+?><div class="notification-wrapper"><?php
 
         if(Input::exists())
         {
@@ -27,9 +28,11 @@
             ));
             if($validate->passed()){
 
+                $reserveringen = new Reservering();
+
                 try{
 
-                    DB::getInstance()->query('INSERT INTO `reserveringen` (`naam`, `email`, `aantal_personen`, `datum`, `tijd`, `opmerking`) VALUES (?, ?, ?, ?, ?, ?);', array(
+                    $reserveringen->create(array(
                         Input::get('naam'),
                         Input::get('email'),
                         Input::get('aantalpersonen'),
@@ -52,8 +55,9 @@
                     header('Location: index.php');
                 }
 
-            }else{
-                ?><div class="notification-wrapper"><?php
+            }
+            else{
+
                 foreach($validate->errors() as $error){
                     echo '<div class="notification warning white z-depth-1">
                             <p class="warning"><i class="material-icons left warning">error</i>' . $error . '<i class="material-icons right close">close</i></p>
