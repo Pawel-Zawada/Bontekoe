@@ -49,3 +49,9 @@
     margin-left: 3px;
     cursor: pointer;
 }
+
+.menu-container{
+    background-color:#fafafa;
+    padding: 10px 15px 5px 15px;
+    border-radius: 0px 0px 7px 7px;
+}
