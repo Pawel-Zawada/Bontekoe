@@ -7,6 +7,7 @@ $('.datepicker').pickadate({
 
 $('#textarea1').trigger('autoresize');
 
+$('select').materialize_select();
 
 $('i.close').on('click', function(){
 
