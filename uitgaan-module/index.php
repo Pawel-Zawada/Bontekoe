@@ -44,7 +44,7 @@
                         greep en rustig glaasje water buiten op terras met de innemelijke eigenaar kon ik deze mooie avond weer voortzetten
                         en genieten! Genieten van de show, de locatie, de maaltijd en zeker niet te vergeten de goede service en warme belangstelling!
                         Tijdens de avond nog 3 x bezoek gehad van de eigenaar en de zus van Marlies om te checken of het echt nog wel goed ging
-                        . Geweldig mensen, dank jullie wel voor deze fijne avond. Ik heb genoten! Vooral zo doorgaan!!!
+                        . Geweldig mensen, dank jullie wel voor deze fijne avond. Ik heb genoten! Vooral zo doorgaan
                     </p>
                 </div>
             </div>
