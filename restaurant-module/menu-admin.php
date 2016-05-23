@@ -25,6 +25,11 @@ if(Input::exists())
                 'max' =>50,
             ),
 
+            'prijs' => array(
+              'required' => true,
+            ),
+
+
             'description' =>array(
                 'required' => true,
                 'min' => 10,
@@ -43,7 +48,7 @@ if(Input::exists())
                 $table = "frisdranken";
                 break;
             case 3:
-                $table = "voorgerechten";
+                $table = "voorgerecht";
                 break;
             case 4:
                 $table = "hoofdgerecht";
@@ -57,10 +62,12 @@ if(Input::exists())
         }
 
         if($validate->passed()) {
-            DB::getInstance()->query("INSERT INTO `$table`(`naam`, `beschrijving`) VALUES (?, ?)" ,array(
+            DB::getInstance()->query("INSERT INTO `$table`(`naam`, `beschrijving`, `prijs`) VALUES (?, ?, ?)" ,array(
                 Input::get('naam'),
-                Input::get('description')
+                Input::get('description'),
+                Input::get('prijs')
             ));
+            header('Location: menu-admin.php');
 
         }
         else{
@@ -77,11 +84,11 @@ if(Input::exists())
 
 //show menu starts here
 
-$queryAlcohol = "SELECT `id`, `naam`, `beschrijving` FROM `alcohol` ";
-$queryFrisdranken = "SELECT `id`, `naam`, `beschrijving` FROM `frisdranken`";
-$queryVgerechten = "SELECT `id`, `naam`, `beschrijving` FROM `voorgerecht`";
-$queryHgerechten = "SELECT `id`,`naam`, `beschrijving` FROM `hoofdgerecht`";
-$queryNgerechten = "SELECT `id`, `naam`, `beschrijving` FROM `nagerecht`";
+$queryAlcohol = "SELECT `id`, `naam`,`prijs`, `beschrijving` FROM `alcohol` ";
+$queryFrisdranken = "SELECT `id`, `naam`,`prijs`, `beschrijving` FROM `frisdranken`";
+$queryVgerechten = "SELECT `id`, `naam`,`prijs`, `beschrijving` FROM `voorgerecht`";
+$queryHgerechten = "SELECT `id`, `naam`,`prijs`, `beschrijving` FROM `hoofdgerecht`";
+$queryNgerechten = "SELECT `id`, `naam`,`prijs`, `beschrijving` FROM `nagerecht`";
 
 //delete function
 
@@ -139,8 +146,14 @@ if(Input::exists()) {
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="naam" name="naam" type="text" class="validate">
+                            <input id="naam" name="naam" type="text" class="validate" autocomplete="off">
                             <label for="naam">Naam product</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="prijs" name="prijs" type="text" class="validate" autocomplete="off">
+                            <label for="prijs">Prijs</label>
                         </div>
                     </div>
                     <div class="row">
@@ -171,8 +184,8 @@ if(Input::exists()) {
             foreach($sqlAlcohol->results() as $result){
                 $id=$result->id;
                 $value = 1;
-                echo "<br><h5>$result->naam</h5><br>
-                        <blockquote>$result->beschrijving</blockquote><br>";
+                echo "<br><h5>$result->naam</h5>
+                        <blockquote>$result->beschrijving €{$result->prijs}</blockquote><br>";
                 echo "<div class='right'><form method='post' name='delete'>
                             <input name='hiddenid' type='hidden' value='$id'>
                             <input name='hiddenvalue' type='hidden' value='$value'>
@@ -191,8 +204,8 @@ if(Input::exists()) {
             foreach ($sqldranken->results() as $dResult){
                 $id=$dResult->id;
                 $value = 2;
-                echo "<br><h5>$dResult->naam</h5><br>
-                        <blockquote>$dResult->beschrijving</blockquote>";
+                echo "<br><h5>$dResult->naam</h5>
+                        <blockquote>$dResult->beschrijving €{$dResult->prijs}</blockquote>";
                 echo "<div class='right'><form method='post' name='delete'>
                             <input name='hiddenid' type='hidden' value='$id'>
                             <input name='hiddenvalue' type='hidden' value='$value'>
@@ -210,8 +223,8 @@ if(Input::exists()) {
             foreach ($sqlvoor->results() as $voorresult){
                 $id=$voorresult->id;
                 $value = 3;
-                echo "<br><h5>$voorresult->naam</h5><br>
-                        <blockquote>$voorresult->beschrijving</blockquote>";
+                echo "<br><h5>$voorresult->naam</h5>
+                        <blockquote>$voorresult->beschrijving €{$voorresult->prijs}</blockquote>";
                 echo "<div class='right'><form method='post' name='delete'>
                             <input name='hiddenid' type='hidden' value='$id'>
                             <input name='hiddenvalue' type='hidden' value='$value'>
@@ -229,8 +242,8 @@ if(Input::exists()) {
             foreach ($sqlhoofd->results() as $hoofdresult){
                 $id=$hoofdresult->id;
                 $value = 4;
-                echo "<br><h5>$hoofdresult->naam</h5><br>
-                        <blockquote>$hoofdresult->beschrijving</blockquote>";
+                echo "<br><h5>$hoofdresult->naam</h5>
+                        <blockquote>$hoofdresult->beschrijving €{$hoofdresult->prijs}</blockquote>";
                 echo "<div class='right'><form method='post' name='delete'>
                             <input name='hiddenid' type='hidden' value='$id'>
                             <input name='hiddenvalue' type='hidden' value='$value'>
@@ -248,8 +261,8 @@ if(Input::exists()) {
             foreach ($sqlna->results() as $naresult){
                 $id=$naresult->id;
                 $value = 5;
-                echo "<br><h5>$naresult->naam</h5><br>
-                        <blockquote>$naresult->beschrijving</blockquote>";
+                echo "<br><h5>$naresult->naam</h5>
+                        <blockquote>$naresult->beschrijving €{$naresult->prijs}</blockquote>";
                 echo "<div class='right'><form method='post' name='delete'>
                             <input name='hiddenid' type='hidden' value='$id'>
                             <input name='hiddenvalue' type='hidden' value='$value'>
