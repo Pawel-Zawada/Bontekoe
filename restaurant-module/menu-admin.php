@@ -164,7 +164,7 @@ if(Input::exists()) {
                     </div>
                     <div class="row">
                         <div class="input-field center">
-                            <button type="submit" name="form" value="verzenden" class="waves-effect waves-light btn red">Verzenden</button>
+                            <button type="submit" name="form" value="verzenden" class="waves-effect waves-light btn" style="background-color: #FF6A00">Verzenden</button>
                         </div>
                     </div>
                 </form>
@@ -177,7 +177,7 @@ if(Input::exists()) {
             <h4>Menu</h4>
         </div>
         <div class="row">
-            <h5 style="color:#F44336">Alcoholische dranken :</h5>
+            <h5 style="color:#FF6A00">Alcoholische dranken :</h5>
             <div class="divider"></div>
             <?php
             $sqlAlcohol = DB::getInstance()->query($queryAlcohol);
@@ -189,7 +189,7 @@ if(Input::exists()) {
                 echo "<div class='right'><form method='post' name='delete'>
                             <input name='hiddenid' type='hidden' value='$id'>
                             <input name='hiddenvalue' type='hidden' value='$value'>
-                            <input type='submit' name='delete' class='waves-effect waves-light btn red' value='Delete'>
+                            <input type='submit' name='delete' class='waves-effect waves-light btn' style='background-color: #FF6A00' value='Delete'>
                       </form></div>";
             }
 
@@ -197,7 +197,7 @@ if(Input::exists()) {
         </div>
 
         <div class="row">
-            <h5 style="color: #f44336">Dranken :</h5>
+            <h5 style="color: #FF6A00">Dranken :</h5>
             <div class="divider"></div>
             <?php
             $sqldranken = DB::getInstance()->query($queryFrisdranken);
@@ -209,14 +209,14 @@ if(Input::exists()) {
                 echo "<div class='right'><form method='post' name='delete'>
                             <input name='hiddenid' type='hidden' value='$id'>
                             <input name='hiddenvalue' type='hidden' value='$value'>
-                            <input type='submit' name='delete' class='waves-effect waves-light btn red' value='Delete'>
+                            <input type='submit' name='delete' class='waves-effect waves-light btn' STYLE='background-color: #FF6A00' value='Delete'>
                         </form></div>";
             }
             ?>
         </div>
 
         <div class="row">
-            <h5 style="color:#F44336">Voorgerecht :</h5>
+            <h5 style="color:#FF6A00">Voorgerecht :</h5>
             <div class="divider"></div>
             <?php
             $sqlvoor = DB::getInstance()->query($queryVgerechten);
@@ -228,14 +228,14 @@ if(Input::exists()) {
                 echo "<div class='right'><form method='post' name='delete'>
                             <input name='hiddenid' type='hidden' value='$id'>
                             <input name='hiddenvalue' type='hidden' value='$value'>
-                            <input type='submit' name='delete' class='waves-effect waves-light btn red' value='Delete'>
+                            <input type='submit' name='delete' class='waves-effect waves-light btn' style='background-color: #FF6A00' value='Delete'>
                         </form></div>";
             }
             ?>
         </div>
 
         <div class="row">
-            <h5 style="color:#F44336">Hoofdgerechten :</h5>
+            <h5 style="color:#FF6A00">Hoofdgerechten :</h5>
             <div class="divider"></div>
             <?php
             $sqlhoofd = DB::getInstance()->query($queryHgerechten);
@@ -247,14 +247,14 @@ if(Input::exists()) {
                 echo "<div class='right'><form method='post' name='delete'>
                             <input name='hiddenid' type='hidden' value='$id'>
                             <input name='hiddenvalue' type='hidden' value='$value'>
-                            <input type='submit' name='delete' class='waves-effect waves-light btn red' value='Delete'>
+                            <input type='submit' name='delete' class='waves-effect waves-light btn' style='background-color: #FF6A00' value='Delete'>
                         </form></div>";
             }
             ?>
         </div>
 
         <div class="row">
-            <h5 style="color:#F44336">Nagerechten :</h5>
+            <h5 style="color:#FF6A00">Nagerechten :</h5>
             <div class="divider"></div>
             <?php
             $sqlna = DB::getInstance()->query($queryNgerechten);
@@ -266,7 +266,7 @@ if(Input::exists()) {
                 echo "<div class='right'><form method='post' name='delete'>
                             <input name='hiddenid' type='hidden' value='$id'>
                             <input name='hiddenvalue' type='hidden' value='$value'>
-                            <input type='submit' name='delete' class='waves-effect waves-light btn red' value='Delete'>
+                            <input type='submit' name='delete' class='waves-effect waves-light btn' style='background-color: #FF6A00' value='Delete'>
                         </form></div>";
             }
             ?>

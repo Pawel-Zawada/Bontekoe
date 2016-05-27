@@ -79,10 +79,10 @@
         ?>
     </div>
 
-    <div class="container">
+    <div class="row container hide-on-small-only">
         <form action="" method="post">
             <div class="row">
-                <div class="col s6">
+                <div class="col s5">
                     <div class="row">
                         <div class="col s12 input-field">
                             <input type="text" class="validate" id="naam" name="naam">
@@ -92,7 +92,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col s6">
+                <div class="col s5">
                     <div class="row">
                         <div class="col s12 input-field">
                             <input type="text" class="validate" id="email" name="email">
@@ -102,7 +102,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col s6">
+                <div class="col s5">
                     <div class="row">
                         <div class="col s12 input-field">
                             <input type="text" class="validate" id="personen" name="aantalpersonen">
@@ -112,7 +112,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col s6">
+                <div class="col s5">
                     <div class="row">
                         <div class="col s12 input-field">
                             <input type="date" class="datepicker" id="datum" name="date">
@@ -122,7 +122,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col s6">
+                <div class="col s5">
                     <div class="row">
                         <div class="col s12 input-field">
                             <input type="text" class="validate" placeholder="e.g. 19:30" id="tijd" name="time">
@@ -132,7 +132,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col s6">
+                <div class="col s5">
                     <div class="row">
                         <div class="input-field col s12">
                             <textarea id="textarea1" class="materialize-textarea" name="opmerking"></textarea>
@@ -142,9 +142,90 @@
                 </div>
             </div>
 
-            <button type="submit" class="waves-light waves-effect btn red" name="reservering" value="btn">Reserveer</button>
+            <button type="submit" class="waves-light waves-effect btn" name="reservering" value="btn" style="background-color: #FF6A00">Reserveer</button>
 
         </form>
+
+        <div class="google-maps">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39148.581918353426!2d4.610317374835417!3d52.174577465941844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5db4337cb2ef1%3A0x36d2588784945cbc!2sWoubrugge!5e0!3m2!1snl!2snl!4v1464360616933" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+        <div class="contact">
+            <h5>Contact</h5>
+            <p>Restaurant De Bontekoe</p>
+            <p><strong>Openingstijden :</strong> </p>
+            <p><strong>Telefoon Nummer:</strong> +31 0172 123457</p>
+            <p><strong>Beschrijving:</strong><br>
+                Gelegen in het boerenorpje Woudebrugge kunt u hier dagelijks terecht voor echte authentieke mediterraanse maaltijden,
+                voor een snelle hap, maar ook voor een uitgebreid avondje tafelen, dan begint u met antipasto, gevolgd door primo,
+                secondo en tot slot een dolce met caffe en limoncello. Wij werken alleen met de beste en verse producten.
+            </p>
+        </div>
+    </div>
+<div class="hide-on-med-and-up row container mobile-form ">
+<form action="" method="post">
+    <div class="row">
+        <div class="col s6">
+            <div class="row">
+                <div class="col s12 input-field">
+                    <input type="text" class="validate" id="naam" name="naam">
+                    <label for="naam">Volledige naam</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s6">
+            <div class="row">
+                <div class="col s12 input-field">
+                    <input type="text" class="validate" id="email" name="email">
+                    <label for="email">Email</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s6">
+            <div class="row">
+                <div class="col s12 input-field">
+                    <input type="text" class="validate" id="personen" name="aantalpersonen">
+                    <label for="personen">Aantal Personen</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s6">
+            <div class="row">
+                <div class="col s12 input-field">
+                    <input type="date" class="datepicker" id="datum" name="date">
+                    <label for="datum">Datum</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s6">
+            <div class="row">
+                <div class="col s12 input-field">
+                    <input type="text" class="validate" placeholder="e.g. 19:30" id="tijd" name="time">
+                    <label for="time">Tijd</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s6">
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea id="textarea1" class="materialize-textarea" name="opmerking"></textarea>
+                    <label for="textarea1">Opmerking</label>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <button type="submit" class="waves-light waves-effect btn" name="reservering" value="btn" style="background-color: #FF6A00">Reserveer</button>
+
+</form>
+</div>
 <?php include "includes/footer.php"; ?>

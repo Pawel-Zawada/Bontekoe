@@ -1,3 +1,9 @@
+.home {
+    height: 100%;
+    max-height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
 .notification-wrapper{
     position: fixed;
     top: 96px;
@@ -54,4 +60,105 @@
     background-color:#fafafa;
     padding: 10px 15px 5px 15px;
     border-radius: 0px 0px 7px 7px;
+}
+
+.nav-wrapper {
+    background-color: #FF6A00;
+}
+.card {
+    margin: 0;
+}
+.tabs .tab a{
+    color: #ffffff;
+}
+.tabs .tab a:hover{
+    color: #ffffff;
+}
+.tabs .tab .active{
+    color: #ffffff;
+}
+.tabs {
+    background-color: #FF6A00;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+.description {
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background-color: #ffffff;
+    color: #000;
+    width: 70%;
+    left: 15%;
+
+}
+.chef {
+    width: 90%;
+}
+.antipasto {
+    width: 80%;
+}
+.tomaat {
+    width: 100%;
+    margin: 0;
+}
+.fullscreen {
+    background-image: url("../images/restaurant-carousel-1.jpg");
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.titel {
+    font-weight: 300;
+    color: #ffffff;
+}
+.button-welkom{
+    margin-top: 200px;
+}
+.logo {
+    width: 9%;
+}
+.balk {
+
+    width: 70%;
+    left: 15%;
+
+}
+.absolute {
+    position: absolute;
+    width: 100%;
+    left: 15%;
+
+}
+
+.logo-nav {
+    width: 15%;
+}
+.google-maps {
+    padding-bottom: 75%; /*dit is de aspect ratio*/
+    height: 0;
+    overflow: hidden;
+
+}
+.google-maps iframe {
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    width: 30% !important;
+    height: 30% !important;
+}
+.contact {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    width: 30%;
+}
+input:not([type]):focus:not([readonly])+label,input[type=text]:focus:not([readonly])+label,input[type=password]:focus:not([readonly])+label,input[type=email]:focus:not([readonly])+label,input[type=url]:focus:not([readonly])+label,input[type=time]:focus:not([readonly])+label,input[type=date]:focus:not([readonly])+label,input[type=datetime]:focus:not([readonly])+label,input[type=datetime-local]:focus:not([readonly])+label,input[type=tel]:focus:not([readonly])+label,input[type=number]:focus:not([readonly])+label,input[type=search]:focus:not([readonly])+label,textarea.materialize-textarea:focus:not([readonly])+label{color:#FF6A00}
+input:not([type]):focus:not([readonly]),input[type=text]:focus:not([readonly]),input[type=password]:focus:not([readonly]),input[type=email]:focus:not([readonly]),input[type=url]:focus:not([readonly]),input[type=time]:focus:not([readonly]),input[type=date]:focus:not([readonly]),input[type=datetime]:focus:not([readonly]),input[type=datetime-local]:focus:not([readonly]),input[type=tel]:focus:not([readonly]),input[type=number]:focus:not([readonly]),input[type=search]:focus:not([readonly]),textarea.materialize-textarea:focus:not([readonly]){border-bottom:1px solid #FF6A00;box-shadow:0 1px 0 0 #FF6A00}
+.input-field .prefix.active{color:#FF6A00}
+
+blockquote {
+    border-left: 6px solid #FF6A00;
 }

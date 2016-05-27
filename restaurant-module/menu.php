@@ -9,9 +9,9 @@ $queryNgerechten = "SELECT `naam`,`prijs`, `beschrijving` FROM `nagerecht`";
 ?>
 
 <div class="container">
-    <div class="card-panel red">
+    <div class="card-panel" style="background-color: #FF6A00;">
         <div class="row">
-            <h4 style="color: white" class="center">Menu</h4>
+            <h4 style="color: white;background-color: #FF6A00" class="center">Menu</h4>
         </div>
     </div>
 </div>
@@ -19,7 +19,7 @@ $queryNgerechten = "SELECT `naam`,`prijs`, `beschrijving` FROM `nagerecht`";
 <div class="container">
     <div class="card-panel">
         <div class="row">
-            <h5 style="color:#F44336">Voorgerechten :</h5>
+            <h5 style="color:#FF6A00">Voorgerechten :</h5>
         </div>
         <div class="row">
             <?php
@@ -36,7 +36,7 @@ $queryNgerechten = "SELECT `naam`,`prijs`, `beschrijving` FROM `nagerecht`";
 
     <div class="card-panel">
         <div class="row">
-            <h5 style="color:#F44336">Hoofdgerechten :</h5>
+            <h5 style="color:#FF6A00">Hoofdgerechten :</h5>
         </div>
         <div class="row">
             <?php
@@ -53,7 +53,7 @@ $queryNgerechten = "SELECT `naam`,`prijs`, `beschrijving` FROM `nagerecht`";
 
     <div class="card-panel">
         <div class="row">
-            <h5 style="color:#F44336">Hoofdgerechten :</h5>
+            <h5 style="color:#FF6A00">Hoofdgerechten :</h5>
         </div>
         <div class="row">
             <?php
@@ -70,7 +70,7 @@ $queryNgerechten = "SELECT `naam`,`prijs`, `beschrijving` FROM `nagerecht`";
 
     <div class="card-panel">
         <div class="row">
-            <h5 style="color:#F44336">Dranken (niet-alcoholisch) :</h5>
+            <h5 style="color:#FF6A00">Dranken (niet-alcoholisch) :</h5>
         </div>
         <div class="row">
             <?php
@@ -87,7 +87,7 @@ $queryNgerechten = "SELECT `naam`,`prijs`, `beschrijving` FROM `nagerecht`";
 
     <div class="card-panel">
         <div class="row">
-            <h5 style="color:#F44336">Dranken (alcoholisch) :</h5>
+            <h5 style="color:#FF6A00">Dranken (alcoholisch) :</h5>
         </div>
         <div class="row">
             <?php
@@ -101,7 +101,6 @@ $queryNgerechten = "SELECT `naam`,`prijs`, `beschrijving` FROM `nagerecht`";
             ?>
         </div>
     </div>
-
 </div>
 
 
