@@ -162,3 +162,6 @@ input:not([type]):focus:not([readonly]),input[type=text]:focus:not([readonly]),i
 blockquote {
     border-left: 6px solid #FF6A00;
 }
+.top-logo {
+    width: 20%;
+}

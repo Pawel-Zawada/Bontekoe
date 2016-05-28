@@ -16,7 +16,7 @@
     <body class="home">
         <div class="row">
             <div class="fullscreen">
-            <div class="absolute">
+            <div class="absolute hide-on-small-only">
                 <div class="balk">
                     <ul class="tabs z-depth-2">
                         <li class="tab col s3"><a href="#test1">Menu</a></li>
@@ -78,6 +78,17 @@
                     </div>
                 </div>
             </div>
+                <nav class="hide-on-med-and-up">
+                    <div class="nav-wrapper">
+                        <a href="home_restaurant.php" class="brand-logo center-align"><img src="images/Bontekoe-Logo-PNG.png" class="top-logo"></a>
+                        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                        <ul class="side-nav" id="mobile-demo">
+                            <li><a href="home_restaurant.php">Home</a></li>
+                            <li><a href="menu.php">Menu</a></li>
+                            <li><a href="index.php">Reserveren</a></li>
+                        </ul>
+                    </div>
+                </nav>
                 <div class="button-welkom">
 
                     <div class="center-align">
@@ -91,7 +102,7 @@
                     </div>
                     <br>
                     <br>
-                    <div class="center-align">
+                    <div class="center-align hide-on-small-only">
                         <img class="logo responsive-img" src="images/Bontekoe-Logo-PNG.png">
                     </div>
                 </div>    
@@ -107,6 +118,7 @@
                 tabs();
                 
             });
+            $(".button-collapse").sideNav();
         });
     </script>
 </html>
