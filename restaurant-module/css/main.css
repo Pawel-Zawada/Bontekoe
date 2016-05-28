@@ -137,7 +137,7 @@
     width: 15%;
 }
 .google-maps {
-    padding-bottom: 75%; /*dit is de aspect ratio*/
+    /* padding-bottom: 75%; dit is de aspect ratio*/
     height: 0;
     overflow: hidden;
 
@@ -166,5 +166,5 @@ blockquote {
     width: 20%;
 }
 html {
-    overflow-x: hidden;
+    /*overflow-x: hidden; */
 }
