@@ -161,7 +161,7 @@
             </p>
         </div>
     </div>
-<div class="hide-on-med-and-up row container mobile-form ">
+<div class="hide-on-med-and-up row container mobile-form" style="margin-left: 30%">
 <form action="" method="post">
     <div class="row">
         <div class="col s6">

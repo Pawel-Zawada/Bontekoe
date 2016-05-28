@@ -15,7 +15,7 @@
     <nav>
         <div class="nav-wrapper">
             <div class="container">
-                <a href="home_restaurant.php" class="brand-logo"><img class="responsive-img logo-nav" src="images/Bontekoe-Logo-PNG.png"></a>
+                <a href="home_restaurant.php" class="brand-logo center-align"><img class="responsive-img logo-nav" src="images/Bontekoe-Logo-PNG.png"></a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="home_restaurant.php">Home</a></li>

@@ -165,3 +165,6 @@ blockquote {
 .top-logo {
     width: 20%;
 }
+html {
+    overflow-x: hidden;
+}
