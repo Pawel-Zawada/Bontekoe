@@ -9,12 +9,3 @@ $('#textarea1').trigger('autoresize');
 
 $('select').materialize_select();
 
-$('i.close').on('click', function(){
-
-    $(this).parents(':eq(1)').animate({
-        left: "-300px"
-    }, 150, "easeOutBounce").fadeOut(150, function(){
-        $(this).remove();
-    });
-
-});

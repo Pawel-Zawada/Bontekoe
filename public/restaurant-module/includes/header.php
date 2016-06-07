@@ -11,21 +11,22 @@
     </head>
     <body>
 
-<br><br>
+
     <nav>
-        <div class="nav-wrapper light-pink-bontekoe">
+        <div class="nav-wrapper">
             <div class="container">
-                <a href="#!" class="brand-logo">Uitgaan Centrum De Bonte Koe</a>
+                <a href="home_restaurant.php" class="brand-logo center-align"><img class="responsive-img logo-nav" src="images/Bontekoe-Logo-PNG.png"></a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="areas.php">Areas</a></li>
+                    <li><a href="home_restaurant.php">Home</a></li>
+                    <li><a href="index.php">Reserveren</a></li>
+                    <li><a href="menu.php">Menu</a></li>
                 </ul>
                 <ul class="side-nav" id="mobile-demo">
-                    <li><a href="home.php">Home</a></li>
-                    <li><a href="areas.php">Areas</a></li>
+                    <li><a href="home_restaurant.php">Home</a></li>
+                    <li><a href="index.php">Reserveren</a></li>
+                    <li><a href="menu.php">Menu</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-<br><br>
