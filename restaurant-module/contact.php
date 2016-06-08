@@ -1,124 +1,172 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Matthijs
- * Date: 26-5-2016
- * Time: 12:19
- */
-?>
-<!doctype html>
-<html lang="nl">
-    <head>
-        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
-        <link rel="stylesheet" href="css/main.css">
-    </head>
-    <body class="home">
-        <div class="row">
-            <div class="fullscreen">
-            <div class="absolute hide-on-small-only">
-                <div class="balk">
-                    <ul class="tabs z-depth-2">
-                        <li class="tab col s3"><a href="#test1">Menu</a></li>
-                        <li class="tab col s3"><a href="#test2">Over Ons</a></li>
-                        <li class="tab col s3"><a href="#test3" class="active">Welkom</a></li>
-                        <li class="tab col s3"><a href="#test4">Onze Boeren</a></li>
-                    </ul>
-                </div>
-                <div id="test3"></div>
-                <div id="test1" class="description z-depth-1">
-                    <br>
-                    <h5>Bekijk ons rijk samengestelde menu</h5>
-                    <br>
-                    <div class="row">
-                        <div class="col s10"> <p>Vers, Kruidig en rijk aan smaak zijn allemaal eigenschappen die passen bij de mediterraanse keuken.<br>
-                                Bij ons vindt u Italiaans, Grieks, Frans, Spaans en Portugees eten.<br>
-                                Ons eten word bereid door het beste keuken personeel en natuurlijk onze chef Fernando.<br>
-                            </p>
-                        </div>
-                        <div class="col s2" style="padding: 0">
-                            <img src="images/mr._chef_kok_kostuum_a.jpg" class="chef">
-                        </div>
-                    </div>
-                    <a class="waves-effect waves-light btn" style="background-color: #FF6A00; margin: 3%" href="menu.php">Bekijk ons menu</a>
-                </div>
-                <div id="test2" class="description z-depth-1">
-                    <br>
-                    <h5>Over ons</h5>
-                    <br>
-                    <div class="row">
-                        <div class="col s10">
-                            <p>
-                                Gelegen in het boerenorpje Woudebrugge kunt u hier dagelijks terecht voor echte authentieke mediterraanse maaltijden,<br>
-                                voor een snelle hap, maar ook voor een uitgebreid avondje tafelen, dan begint u met antipasto, gevolgd door primo,<br>
-                                secondo en tot slot een dolce met caffe en limoncello. Wij werken alleen met de beste en verse producten.<br>
-                            </p>
-                        </div>
-                        <div class="col s2">
-                            <img src="images/Antipasto-Skewers-5.jpg" class="antipasto">
-                        </div>
-                    </div>
-                </div>
-                <div id="test4" class="description z-depth-1">
-                    <br>
-                    <h5>Onze boeren</h5>
-                    <br>
-                    <div class="row">
-                        <div class="col s10">
-                            <p>
-                                Natuurlijk kunnen wij niks zonder onze boeren.<br>
-                                Al ons groente en fruit wordt elke dag vers en biologisch geleverd,<br>
-                                Wij hechten namelijk veel waarden aan vers eten.<br>
+<?php   include "includes/header.php";
+?><div class="notification-wrapper"><?php
 
-                            </p>
+if(Input::exists())
+{
+    $validate = new Validate();
+    $validation = $validate->check($_POST, array(
+
+        'naam' => array(
+            'required' => true,
+            'min' => 6,
+            'max' => 64
+        ),
+        'email' => array(
+            'required' => true,
+            'min' => 6,
+            'max' => 64
+        ),
+        'aantalpersonen' => array(
+            'required' => true,
+        ),
+        'date' => array(
+            'required' => true
+        ),
+        'time' => array(
+            'required' => true
+        )
+    ));
+    if($validate->passed()){
+
+        $reserveringen = new Reservering();
+
+        try{
+
+            $reserveringen->create(array(
+                Input::get('naam'),
+                Input::get('email'),
+                Input::get('aantalpersonen'),
+                Input::get('date'),
+                Input::get('time'),
+                Input::get('opmerking')
+            ));
+
+            Session::flash('home', '<div class="notification white z-depth-1">
+                                                <p><i class="material-icons left info">info_outline</i> U heeft geregistreerd <i class="material-icons right close">close</i></p>
+                                            </div>');
+            Redirect::to('index.php');
+
+
+
+        }catch(Exception $e){
+            Session::flash('home', '<div class="notification warning white z-depth-1">
+                                    <p class="warning"><i class="material-icons left warning">error</i> U heeft niks ingevuld <i class="material-icons right close">close</i></p>
+                                 </div>');
+            header('Location: index.php');
+        }
+
+    }
+    else{
+
+        foreach($validate->errors() as $error){
+            echo '<div class="notification warning white z-depth-1">
+                            <p class="warning"><i class="material-icons left warning">error</i>' . $error . '<i class="material-icons right close">close</i></p>
+                          </div>';
+        }
+    }
+}
+
+
+
+?>
+
+<?php
+
+if(Session::exists('home')){
+    echo Session::flash('home');
+}
+
+?>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col m6 s12">
+                <div class="card-panel">
+                    <form action="" method="post">
+                        <div class="row">
+                            <h5>Reserveren</h5>
+                            <div class="divider"></div>
+                            <div class="col s12 m12">
+                                <div class="row">
+                                    <div class="col s12 input-field">
+                                        <input type="text" class="validate" id="naam" name="naam">
+                                        <label for="naam">Volledige naam</label>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col s2">
-                            <img src="images/bio-tomaat.jpg" class="tomaat">
+                        <div class="row">
+                            <div class="col s12 m12">
+                                <div class="row">
+                                    <div class="col s12 input-field">
+                                        <input type="text" class="validate" id="email" name="email">
+                                        <label for="email">Email</label>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                        <div class="row">
+                            <div class="col s12 m12 ">
+                                <div class="row">
+                                    <div class="col s12 input-field">
+                                        <input type="text" class="validate" id="personen" name="aantalpersonen">
+                                        <label for="personen">Aantal Personen</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 m12">
+                                <div class="row">
+                                    <div class="col s12 input-field">
+                                        <input type="date" class="datepicker" id="datum" name="date">
+                                        <label for="datum">Datum</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 m12">
+                                <div class="row">
+                                    <div class="col s12 input-field">
+                                        <input type="text" class="validate" placeholder="e.g. 19:30" id="tijd" name="time">
+                                        <label for="time">Tijd</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 m12">
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <textarea id="textarea1" class="materialize-textarea" name="opmerking"></textarea>
+                                        <label for="textarea1">Opmerking</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="waves-light waves-effect btn" name="reservering" value="btn" style="background-color: #FF6A00">Reserveer</button>
+                    </form>
                 </div>
             </div>
-                <nav class="hide-on-med-and-up">
-                    <div class="nav-wrapper">
-                        <a href="home_restaurant.php" class="brand-logo center-align"><img src="images/Bontekoe-Logo-PNG.png" class="top-logo"></a>
-                        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                        <ul class="side-nav" id="mobile-demo">
-                            <li><a href="home_restaurant.php">Home</a></li>
-                            <li><a href="menu.php">Menu</a></li>
-                            <li><a href="index.php">Reserveren</a></li>
+
+            <div class="col hide-on-small-only m6">
+                <div style="top: 0px;" class="toc-wrapper">
+                    <div style="height: 1px;">
+                        <ul class="section table-of-contents">
+                            <h5>Contact</h5>
+                            <div class="divider"></div>
+                            <p>Restaurant De Bontekoe</p>
+                            <p><strong>Openingstijden :</strong> </p>
+                            <p><strong>Telefoon Nummer:</strong> +31 0172 123457</p>
+                            <p><strong>Beschrijving:</strong><br>
+                                Gelegen in het boerenorpje Woudebrugge kunt u hier dagelijks terecht voor echte authentieke mediterraanse maaltijden,
+                                voor een snelle hap, maar ook voor een uitgebreid avondje tafelen, dan begint u met antipasto, gevolgd door primo,
+                                secondo en tot slot een dolce met caffe en limoncello. Wij werken alleen met de beste en verse producten.
+                            </p>
                         </ul>
                     </div>
-                </nav>
-                <div class="button-welkom">
-
-                    <div class="center-align">
-                        <h5 class="titel">Welkom bij restaurant De Bontekoe</h5>
-                    </div>
-                    <br>
-                    <br>
-                    <br>
-                    <div class="center-align knop">
-                        <a class="waves-effect waves-light btn" style="background-color: #FF6A00" href="index.php">Gelijk Reserveren</a>
-                    </div>
-                    <br>
-                    <br>
-                    <div class="center-align hide-on-small-only">
-                        <img class="logo responsive-img" src="images/Bontekoe-Logo-PNG.png">
-                    </div>
-                </div>    
+                </div>
             </div>
         </div>
-    </body>
-    <script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
-    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $('ul.tabs').click(function(){
-                tabs();
-                
-            });
-            $(".button-collapse").sideNav();
-        });
-    </script>
-</html>
+<?php include "includes/footer.php"; ?>
