@@ -1,3 +1,8 @@
+body {
+    background-image: url(http://www.dylansrestaurant.co.za/wp-content/uploads/2012/04/wood_background-web1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 .home {
     height: 100%;
     max-height: 100%;
@@ -143,7 +148,7 @@
 
 }
 .google-maps iframe {
-    position: absolute;
+    position: relative;
     top: 20%;
     right: 5%;
     width: 30% !important;
@@ -167,4 +172,13 @@ blockquote {
 }
 html {
     /*overflow-x: hidden; */
+}
+.pin-top {
+   position: relative;
+}
+.pin-bottom {
+   position: relative;
+}
+.pinned {
+   position: fixed !important;
 }
